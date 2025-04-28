@@ -1,0 +1,45 @@
+<div class="header">
+  <!-- Navbar -->
+  <div class="navbar">
+    <!-- Izquierda: Hamburguesa + Logo -->
+    <div class="left-section">
+      <button class="hamburger" (click)="toggleMenu()">☰</button>
+      <div class="logo">FREEPIK</div>
+    </div>
+
+    <!-- Centro: Menú visible en escritorio -->
+    <div class="menu-container desktop">
+      <ul class="nav-links">
+        <li><a href="#">Suite IA</a></li>
+        <li><a href="#">Imágenes</a></li>
+        <li><a href="#">Iconos</a></li>
+        <li><a href="#">Videos</a></li>
+        <li><a href="#">Plantillas</a></li>
+        <li><a href="#">PSD</a></li>
+        <li><a href="#">Mockups</a></li>
+        <li><a href="#">Más</a></li>
+      </ul>
+    </div>
+
+    <!-- Derecha: Precios + Login -->
+    <div class="right-section">
+      <a class="pricing" routerLink="/precios">Precios</a>
+      <button class="login-btn" (click)="navigateToLogin()">Iniciar sesión</button>
+    </div>
+  </div>
+
+  <!-- Menú desplegable para móvil -->
+  <div class="menu-container mobile" [class.open]="menuOpen">
+    <ul class="nav-links">
+      <li><a href="#">Suite IA</a></li>
+      <li><a href="#">Imágenes</a></li>
+      <li><a href="#">Iconos</a></li>
+      <li><a href="#">Videos</a></li>
+      <li><a href="#">Plantillas</a></li>
+      <li><a href="#">PSD</a></li>
+      <li><a href="#">Mockups</a></li>
+      <li><a href="#">Más</a></li>
+      <li><a href="#">Precios</a></li>
+    </ul>
+  </div>
+</div>

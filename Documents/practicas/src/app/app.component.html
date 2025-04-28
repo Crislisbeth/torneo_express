@@ -1,0 +1,24 @@
+<!-- Si estamos en login o registro, solo mostramos el contenido sin header ni footer -->
+<ng-container *ngIf="isAuthPage(); else showLayout">
+  <router-outlet></router-outlet>
+</ng-container>
+
+<!-- En todas las demás páginas, mostramos el layout completo -->
+<ng-template #showLayout>
+  <!-- Elimina la duplicación aquí -->
+  <app-header></app-header>
+  
+  <main>
+    <ng-container *ngIf="isHomePage(); else pageContent">
+      <!-- Contenido de la página principal -->
+      <app-search></app-search> 
+    </ng-container>
+
+    <!-- Otras páginas muestran solo router-outlet -->
+    <ng-template #pageContent>
+      <router-outlet></router-outlet>
+    </ng-template>
+  </main>
+  
+  <app-footer></app-footer>
+</ng-template>

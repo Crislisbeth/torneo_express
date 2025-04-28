@@ -1,0 +1,34 @@
+<div class="search-container">
+  <input
+    type="text"
+    class="search-input"
+    placeholder="Buscar en todos los recursos"
+    (focus)="showDropdown = true"
+    (blur)="hideDropdown()"
+    [value]="searchQuery"
+    (input)="onSearchInput($event)" />
+
+  @if (showDropdown) {
+    <div class="dropdown">
+      <div class="categories">
+        @for (category of categories; track category) {
+          <button class="category-btn">
+            {{ category }}
+          </button>
+        }
+      </div>
+  
+      <div class="creation-section">
+        <h3>Comenzar a crear</h3>
+        <ul>
+          @for (item of creationOptions; track item) {
+            <li>
+              <strong>{{ item.title }}</strong>
+              <p>{{ item.description }}</p>
+            </li>
+          }
+        </ul>
+      </div>
+    </div>
+  }
+</div>

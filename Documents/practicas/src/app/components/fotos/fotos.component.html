@@ -1,0 +1,213 @@
+<!-- Sección del héroe con imagen de fondo -->
+<div class="hero">
+  <div class="hero-content">
+    <h1>Fotos gratuitas con las que contar cualquier historia</h1>
+    <p>Descubre millones de fotos de calidad profesional que dejarán a cualquiera sin palabras</p>
+    
+    <!-- Barra de búsqueda -->
+    <div class="search-container" (click)="onSearchContainerClick($event)">
+      <div class="search-bar">
+        <div class="search-icon">
+          <i class="photo-icon">📷</i>
+        </div>
+        <input 
+          type="text" 
+          placeholder="Buscar Fotos" 
+          class="search-input"
+          (click)="toggleSearchOptions(true)"
+        >
+        <div class="action-buttons">
+          <button class="camera-btn">📷</button>
+          <button class="search-btn">🔍</button>
+        </div>
+      </div>
+      
+      <!-- Opciones de búsqueda que aparecen al hacer clic -->
+      <div class="search-options" *ngIf="showSearchOptions">
+        <div class="categories">
+          <button class="category-btn">
+            <span class="category-icon">🔄</span>
+            Vectores
+          </button>
+          <button class="category-btn">
+            <span class="category-icon">🖌️</span>
+            Ilustraciones
+          </button>
+          <button class="category-btn active">
+            <span class="category-icon">📷</span>
+            Fotos
+          </button>
+          <button class="category-btn">
+            <span class="category-icon">🔣</span>
+            Iconos
+          </button>
+          <button class="category-btn">
+            <span class="category-icon">🎬</span>
+            Videos
+          </button>
+          <button class="category-btn">
+            <span class="category-icon">📝</span>
+            PSD
+          </button>
+        </div>
+        
+        <div class="categories second-row">
+          <button class="category-btn">
+            <span class="category-icon">📄</span>
+            Plantillas
+          </button>
+          <button class="category-btn">
+            <span class="category-icon">📱</span>
+            Mockups
+          </button>
+          <button class="category-btn">
+            <span class="category-icon">🎵</span>
+            Música
+          </button>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Búsquedas populares -->
+    <div class="popular-searches">
+      <span>Búsquedas populares:</span>
+      <div class="search-tags">
+        <a *ngFor="let tag of popularSearches" class="search-tag">
+          🔍 {{tag}}
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Sección fotos para cada ocasion -->
+<div class="gallery-container">
+  <h2>Fotos perfectas para cada ocasión</h2>
+  <p>Navega por las distintas categorías para encontrar las imágenes que mejor expresen tus ideas y conecten con tu audiencia</p>
+
+  <div class="categories-grid">
+    <div class="category-card" *ngFor="let categoria of categorias">
+      <img [src]="categoria.imagen" [alt]="categoria.titulo" />
+      <h3>{{ categoria.titulo }}</h3>
+    </div>
+  </div>
+</div>
+
+<!-- Sección manten la coherencia en tus diseños -->
+<div class="series-container">
+  <h2>Mantén la coherencia en tus diseños</h2>
+  <p>Elige las fotos de la misma serie para seguir la misma narrativa visual en todo tu proceso creativo</p>
+
+  <div class="series-grid">
+    <div class="series-card" *ngFor="let serie of series">
+      <div class="main-image">
+        <img [src]="serie.imagenPrincipal" [alt]="serie.titulo" />
+        <span class="badge">{{ serie.numeroImagenes }} Images</span>
+      </div>
+      <div class="thumbnail-row">
+        <img *ngFor="let thumb of serie.thumbnails" [src]="thumb" [alt]="serie.titulo" />
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Sección galeria de inspiracion -->
+<div class="inspiration-gallery">
+  <div class="gallery-header">
+    <div>
+      <h2>Galería de inspiración</h2>
+      <p>Explora estas colecciones y descubre una selección de imágenes, ambientes y estilos que pondrán en marcha a tu creatividad</p>
+    </div>
+    <button class="explore-btn">Explorar colecciones →</button>
+  </div>
+
+  <div class="collection-grid">
+    <div class="collection-card" *ngFor="let coleccion of colecciones">
+      <div class="image-grid">
+        <img *ngFor="let img of coleccion.imagenes" [src]="img" [alt]="coleccion.titulo" />
+      </div>
+      <div class="collection-info">
+        <h4>
+          <span *ngIf="coleccion.destacada" class="crown">👑</span>
+          {{ coleccion.titulo }}
+        </h4>
+        <p>{{ coleccion.recursos }} recursos</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Sección fotos gratuitas-->
+<section class="freepik-gallery">
+  <div class="gallery-header">
+    <h2>La selección de fotos gratuitas de <a href="#">Freepik</a></h2>
+    <button class="explore-btn">
+      <span class="icon">🔍</span> Explorar fotos gratuitas
+    </button>
+  </div>
+
+  <div class="gallery-content">
+    <div class="main-photo">
+      <img src="https://picsum.photos/id/1011/600/400" alt="Main" />
+    </div>
+    <div class="grid-photos">
+      <img src="https://picsum.photos/id/1025/300/200" alt="" />
+      <img src="https://picsum.photos/id/1041/300/200" alt="" />
+      <img src="https://picsum.photos/id/1067/300/200" alt="" />
+      <img src="https://picsum.photos/id/1084/300/200" alt="" />
+    </div>
+  </div>
+</section>
+
+<!-- Sección articulos relacionados-->
+<section class="related-articles">
+  <h2>Artículos relacionados</h2>
+  <div class="articles-grid">
+    <!-- Article Card 1 -->
+    <article class="article-card">
+      <img src="https://picsum.photos/id/1018/400/200" alt="Fotografía historia" />
+      <h3>De la idea al clic, ¿cuándo se inventó la fotografía?</h3>
+      <p>
+        En 2011 nació un fascinante proyecto online a partir de una de las preguntas que más pueden revelar sobre nuestra personalidad...
+      </p>
+    </article>
+
+    <!-- Article Card 2 -->
+    <article class="article-card">
+      <img src="https://picsum.photos/id/1021/400/200" alt="Técnicas fotográficas" />
+      <h3>Técnicas actuales y futuras en fotografía</h3>
+      <p>
+        Cuando sales por la puerta, el mundo entero se convierte en tu propia paleta de colores. Tienes el poder de parar el tiempo...
+      </p>
+    </article>
+
+    <!-- Article Card 3 -->
+    <article class="article-card">
+      <img src="https://picsum.photos/id/1035/400/200" alt="Concienciación social" />
+      <h3>World Press Photo, fotografía para la concienciación social</h3>
+      <p>
+        Cada año, hay alrededor del mundo centenares de concursos de fotografía que nos sirven para poder ver la obra de millones de fotógrafos...
+      </p>
+    </article>
+  </div>
+</section>
+
+<!-- Sección FAQ-->
+<div class="faq-container">
+  <h2>FAQ</h2>
+
+  <div class="faq-item" *ngFor="let faq of faqs; let i = index">
+    <div class="faq-question" (click)="toggle(i)">
+      <h3>{{ faq.question }}</h3>
+      <span class="toggle-icon">{{ faq.open ? '—' : '+' }}</span>
+    </div>
+    
+    <div class="faq-answer" *ngIf="faq.open">
+      <p>{{ faq.answer }}</p>
+    </div>
+  </div>
+</div>
+
+
+
+

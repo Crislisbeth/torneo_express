@@ -1,0 +1,85 @@
+<div class="container">
+  <div class="left">
+    <img src="assets/images/background.jpg" alt="Imagen de fondo" />
+  </div>
+
+  <div class="right">
+    <div class="form-container">
+      <h2>Inicia sesión</h2>
+
+      <form>
+        <div class="input-group">
+          <label for="email">Correo electrónico</label>
+          <input
+            type="email"
+            id="email"
+            placeholder="Ingresa tu correo"
+            required
+          />
+        </div>
+
+        <div class="input-group password-group">
+            <label for="password">Contraseña</label>
+            <div class="password-wrapper">
+              <input
+                [type]="passwordVisible ? 'text' : 'password'"
+                id="password"
+                placeholder="Ingresa tu contraseña"
+                required
+                [(ngModel)]="usuario.contrasena"
+                name="contrasena"
+              />
+              <span class="toggle-password" (click)="togglePasswordVisibility()">
+                <svg
+                  *ngIf="!passwordVisible"
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="16"
+                  height="16"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
+                  <circle cx="12" cy="12" r="3"></circle>
+                </svg>
+                <svg
+                  *ngIf="passwordVisible"
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="16"
+                  height="16"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
+                  <circle cx="12" cy="12" r="3"></circle>
+                  <line x1="1" y1="1" x2="23" y2="23"></line>
+                </svg>
+              </span>
+            </div>
+          </div>
+          
+
+        <button type="submit" class="btn login-btn">Iniciar sesión</button>
+      </form>
+
+      <p class="divider">o</p>
+
+      <button class="btn google">
+        <img src="assets/icons/google.png" alt="Google" />
+        Continuar con Google
+      </button>
+
+      <p class="registro-link">
+        ¿Todavía no tienes una cuenta?
+        <a (click)="irARegistro()" class="link-registro">Registrate</a>
+      </p>
+    </div>
+  </div>
+</div>

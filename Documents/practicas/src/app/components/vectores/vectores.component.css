@@ -1,0 +1,608 @@
+/* Estilos base para la galería */
+.gallery-container {
+    width: 100%;
+    padding: 20px 0;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.gallery-header {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.main-title {
+    font-size: 32px;
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.subtitle {
+    font-size: 18px;
+    color: #666;
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+/* Estructura de la cuadrícula de categorías */
+.categories-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+/* Filas de categorías */
+.row {
+    display: flex;
+    gap: 20px;
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+.row:last-child {
+    margin-bottom: 0;
+}
+
+/* Estilos específicos para cada fila */
+.first-row, 
+.second-row, 
+.third-row {
+    display: flex;
+    gap: 20px;
+    margin-bottom: 20px;
+}
+
+.third-row {
+    margin-bottom: 0;
+}
+
+/* Tarjetas de categoría */
+.category-card {
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+    transition: transform 0.3s ease;
+    cursor: pointer;
+    flex: 1;
+    position: relative;
+}
+
+.category-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.12);
+}
+
+/* Contenido de las tarjetas */
+.card-content {
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    display: flex;
+    align-items: flex-end;
+    padding: 20px;
+}
+
+/* Ajuste de alturas para las tarjetas */
+.first-row .card-content {
+    min-height: 180px;
+}
+
+.second-row .card-content,
+.third-row .card-content {
+    min-height: 180px;
+}
+
+/* Título de categoría */
+.category-title {
+    position: absolute;
+    bottom: 15px;
+    left: 15px;
+    font-size: 18px;
+    font-weight: 600;
+    color: white;
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
+}
+
+/* Sección de temas de vectores */
+.vector-themes {
+    margin-top: 60px;
+    padding: 0 20px;
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.vector-themes h2 {
+    font-size: 28px;
+    font-weight: 600;
+    color: #333;
+    text-align: center;
+}
+
+.themes-subtitle {
+    font-size: 16px;
+    color: #666;
+    max-width: 700px;
+    margin: 10px auto 30px;
+    text-align: center;
+}
+
+.theme-filters {
+    display: flex;
+    justify-content: center;
+    gap: 16px;
+    margin-bottom: 32px;
+    flex-wrap: wrap;
+}
+
+.theme-filters button {
+    padding: 10px 16px;
+    border: none;
+    background-color: #e5e5e5;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background-color 0.3s ease;
+}
+
+.theme-filters button:hover {
+    background-color: #d4d4d4;
+}
+
+.themes-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 24px;
+}
+
+/* Tarjeta de tema */
+.theme-card {
+    position: relative;
+    cursor: pointer;
+    border-radius: 12px;
+    overflow: hidden;
+    height: 160px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease-in-out;
+}
+
+.theme-card:hover {
+    transform: translateY(-4px);
+}
+
+.theme-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease-in-out;
+}
+
+.theme-card:hover img {
+    transform: scale(1.05);
+}
+
+/* Título sobre la imagen */
+.theme-card h3 {
+    position: absolute;
+    bottom: 0;
+    margin: 0;
+    width: 100%;
+    padding: 12px;
+    background: rgba(0, 0, 0, 0.5);
+    color: #fff;
+    font-size: 1rem;
+    text-align: center;
+    font-weight: 500;
+}
+
+/* Sección de colecciones de vectores */
+.vector-collections {
+    max-width: 1200px;
+    margin: 80px auto;
+    padding: 0 20px;
+    text-align: center;
+}
+
+.vector-collections h2 {
+    font-size: 28px;
+    font-weight: 600;
+    color: #111;
+    margin-bottom: 10px;
+}
+
+.collections-subtitle {
+    color: #555;
+    font-size: 16px;
+    max-width: 700px;
+    margin: 0 auto 40px;
+}
+
+.collection-grid {
+    display: flex;
+    gap: 24px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.collection-card {
+    width: 100%;
+    max-width: 380px;
+}
+
+.main-image {
+    position: relative;
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+.main-image img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.badge {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: black;
+    color: white;
+    font-size: 12px;
+    padding: 4px 8px;
+    border-radius: 8px;
+}
+
+.thumbnail-grid {
+    margin-top: 10px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 6px;
+}
+
+.thumbnail-grid img {
+    width: 100%;
+    height: 80px;
+    object-fit: cover;
+    border-radius: 6px;
+}
+
+/* Sección de vectores destacados */
+.featured-container {
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 0 20px;
+}
+
+.featured-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 24px;
+}
+
+.featured-header h2 {
+    font-size: 28px;
+    font-weight: 600;
+    margin: 0;
+    color: #333;
+}
+
+.discover-button {
+    background-color: #000;
+    color: white;
+    padding: 12px 24px;
+    border-radius: 8px;
+    border: none;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.discover-button:hover {
+    background-color: #333;
+}
+
+.featured-gallery {
+    display: flex;
+    gap: 16px;
+}
+
+.main-item {
+    flex: 0 0 40%;
+    height: 440px;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.gallery-grid {
+    flex: 0 0 60%;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    gap: 16px;
+}
+
+.gallery-item {
+    position: relative;
+    overflow: hidden;
+    border-radius: 8px;
+    cursor: pointer;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.gallery-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.gallery-item:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.gallery-item:hover img {
+    transform: scale(1.05);
+}
+
+/* Galería de vectores principal */
+.galeria-container {
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 0 20px;
+    font-family: 'Arial', sans-serif;
+}
+
+/* Encabezado con botón de explorar */
+.galeria-header {
+    text-align: left;
+    margin-bottom: 40px;
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.galeria-header h1 {
+    font-size: 28px;
+    font-weight: bold;
+    margin-bottom: 15px;
+    color: #333;
+}
+
+.galeria-header p {
+    font-size: 16px;
+    color: #666;
+    margin-bottom: 0;
+    max-width: 700px;
+}
+
+.btn-explorar {
+    background-color: #000;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    padding: 10px 20px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.btn-explorar:hover {
+    background-color: #333;
+}
+
+/* Grid de colecciones */
+.colecciones-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 20px;
+    margin-bottom: 60px;
+}
+
+/* Tarjeta de colección */
+.coleccion-card {
+    background-color: #fff;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s;
+}
+
+.coleccion-card:hover {
+    transform: translateY(-5px);
+}
+
+.coleccion-imagenes {
+    position: relative;
+    height: 200px;
+    overflow: hidden;
+}
+
+.grid-2x2 {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    height: 100%;
+}
+
+.grid-2x2 img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.coleccion-info {
+    padding: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.coleccion-titulo h3 {
+    font-size: 16px;
+    margin: 0 0 5px 0;
+    font-weight: 600;
+}
+
+.coleccion-titulo p {
+    font-size: 14px;
+    color: #666;
+    margin: 0;
+}
+
+.btn-opciones {
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: #666;
+    padding: 5px;
+    font-size: 18px;
+}
+
+/* Sección de artículos */
+.articulos-section {
+    margin-top: 60px;
+    margin-bottom: 40px;
+}
+
+.articulos-section h2 {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 30px;
+    color: #333;
+}
+
+/* Grid de artículos */
+.articulos-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+    gap: 25px;
+}
+
+/* Tarjeta de artículo */
+.articulo-card {
+    background-color: #fff;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s;
+}
+
+.articulo-card:hover {
+    transform: translateY(-5px);
+}
+
+.articulo-imagen {
+    height: 180px;
+    overflow: hidden;
+}
+
+.articulo-imagen img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.articulo-contenido {
+    padding: 20px;
+}
+
+.articulo-contenido h3 {
+    font-size: 18px;
+    margin: 0 0 10px 0;
+    font-weight: 600;
+}
+
+.articulo-contenido p {
+    font-size: 14px;
+    color: #666;
+    line-height: 1.5;
+    margin: 0;
+}
+
+/* Media queries para responsive */
+@media (max-width: 900px) {
+    .featured-gallery {
+        flex-direction: column;
+    }
+
+    .main-item {
+        height: 350px;
+        flex: none;
+        width: 100%;
+    }
+
+    .gallery-grid {
+        flex: none;
+        width: 100%;
+        grid-template-rows: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .row,
+    .first-row,
+    .second-row,
+    .third-row {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .category-card {
+        width: 100%;
+    }
+
+    .card-content {
+        min-height: 150px !important;
+    }
+
+    .galeria-header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    
+    .btn-explorar {
+        margin-top: 20px;
+    }
+    
+    .colecciones-grid {
+        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    }
+    
+    .articulos-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .featured-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 16px;
+    }
+}
+
+@media (max-width: 600px) {
+    .gallery-grid {
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(8, 1fr);
+    }
+
+    .gallery-item {
+        height: 200px;
+    }
+}
+
+@media (max-width: 480px) {
+    .colecciones-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .grid-2x2 {
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr;
+    }
+}

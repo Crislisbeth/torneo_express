@@ -1,0 +1,161 @@
+<!-- Texto Principal -->
+<div class="hero-text">
+  <h1>Una suite de IA muy versátil y unos contenidos de gran calidad</h1>
+  <p>
+    Explora y crea contenido visual único que refleje tu identidad de marca:
+    imágenes, videos, audio y mucho más.
+  </p>
+</div>
+
+<!-- Barra de búsqueda -->
+<div class="search-container">
+  <div class="search-input-container">
+    <input
+      #searchInput
+      type="text"
+      placeholder="Buscar en todos los recursos"
+      (focus)="toggleDropdown()"
+      class="search-input"
+    />
+    <div class="search-icons">
+      <button class="translate-icon" title="Cambiar idioma">🌐</button>
+      <button class="settings-icon" title="Configuración">⚙️</button>
+    </div>
+    <button class="search-button">Buscar</button>
+  </div>
+
+  <!-- Dropdown de resultados de búsqueda -->
+  <div *ngIf="isDropdownVisible" class="dropdown-menu" #dropdownMenu>
+    <div class="dropdown-section">
+      <h3>Comenzar a crear</h3>
+      <p>Crear contenido basado en tu búsqueda</p>
+
+      <div class="resource-grid">
+        <div class="resource-item" *ngFor="let option of searchOptions" (click)="onCreateResource(option)">
+          <div class="resource-icon">{{ option.icon }}</div>
+          <span>{{ option.title }}</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Carrusel de Galería -->
+<div class="carousel-gallery">
+  <div class="categories">
+    <!-- Aquí puedes agregar categorías si lo necesitas -->
+  </div>
+
+  <div class="gallery-wrapper">
+    <button class="scroll-btn left" (click)="scrollGallery('left')">←</button>
+    <div #galleryContainer class="gallery-container">
+      <div class="gallery-item" *ngFor="let item of galleryItems">
+        <img [src]="item.src" [alt]="item.title" />
+        <div class="info">
+          <h3>{{ item.title }}</h3>
+          <p>{{ item.description }}</p>
+        </div>
+        <div class="badge" *ngIf="item.badge">{{ item.badge }}</div>
+      </div>
+    </div>
+    <button class="scroll-btn right" (click)="scrollGallery('right')">→</button>
+  </div>
+</div>
+
+<!-- Nueva Sección - Millones de archivos listos para usar -->
+<div class="resources-container">
+  <h2 class="resources-title">Millones de archivos listos para usar</h2>
+  
+  <div class="resources-categories">
+    <div *ngFor="let category of categories" 
+         (click)="navigateToCategory(category)" 
+         class="category-item">
+      <div class="category-icon">
+        <img [src]="category.icon" [alt]="category.name">
+      </div>
+      <span>{{ category.name }}</span>
+    </div>
+  </div>
+  
+  <div class="trust-section">
+    <h2 class="trust-title">Millones de equipos creativos, profesionales del marketing y diseñadores depositan su confianza en Freepik</h2>
+    
+    <div class="company-logos">
+      <div *ngFor="let company of companies" class="logo-item">
+        <img [src]="company.logoUrl" [alt]="company.altText">
+        <span>{{ company.name }}</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Sección Lo que más está gustando -->
+<div class="gallery-section">
+  <h2>Lo que más está gustando</h2>
+  <p>Explora contenido visual generado por otros usuarios</p>
+
+  <div class="gallery">
+    <div class="gallery-item" *ngFor="let image of popularImages">
+      <img [src]="image.src" [alt]="image.title" />
+      <div class="gallery-caption">{{ image.title }}</div>
+    </div>
+  </div>
+</div>
+
+<!-- Sección Inspírate -->
+<div class="inspiration-section">
+  <h2>Inspírate</h2>
+  <p>Descubre miles de imágenes increíbles creadas por los artistas especialistas en IA de Freepik</p>
+  
+  <div class="inspiration-gallery">
+    <div class="gallery-img" *ngFor="let image of inspireImages">
+      <img [src]="image.src" [alt]="image.alt">
+    </div>
+  </div> 
+</div>
+
+<!-- Sección de Estadísticas -->
+<div class="estadisticas-container">
+  <div class="titulo-section">
+    <h3>LOS NÚMEROS DE FREEPIK</h3>
+    <h1>Crecemos cada segundo</h1>
+    <button class="register-btn" (click)="irARegistro()">Registrarse gratis</button>
+  </div>
+  
+  <div class="stats-grid">
+    <div class="stat-item">
+      <h2 class="stat-number turquesa">1000 M+</h2>
+      <p class="stat-caption turquesa">imágenes creadas con IA, y subiendo</p>
+      <p class="stat-description">
+        Generación de contenido con IA en tiempo real como nunca antes.
+      </p>
+    </div>
+    
+    <div class="stat-item">
+      <h2 class="stat-number naranja">64 M+</h2>
+      <p class="stat-caption naranja">personas creativas satisfechas</p>
+      <p class="stat-description">
+        Únete a una creciente comunidad de personas innovadoras que dan forma al
+        futuro de la creatividad.
+      </p>
+    </div>
+    
+    <div class="stat-item">
+      <h2 class="stat-number azul">247 M+</h2>
+      <p class="stat-caption azul">recursos listos para usar</p>
+      <p class="stat-description">
+        Iconos, vídeos, audio, imágenes, vectores y mucho más, todo ello listo
+        para tu próximo proyecto.
+      </p>
+    </div>
+    
+    <div class="stat-item">
+      <h2 class="stat-number morado">600 mil+</h2>
+      <p class="stat-caption morado">personas suscritas</p>
+      <p class="stat-description">
+        La creatividad fluye gracias a las funciones Premium y sus posibilidades
+        ilimitadas.
+      </p>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,164 @@
+<!-- Sección buscar Mockups-->
+<section class="mockups-hero">
+  <div class="container">
+    <h1 class="title">Edita y crea mockups online</h1>
+    <p class="subtitle">
+      Explora nuestra
+      <span class="highlight">extensa colección de mockups</span> de gran
+      calidad. Personalízalos a tu gusto con nuestro generador de mockups online
+      gratuito.
+    </p>
+
+    <div class="search-container">
+      <div class="search-box" (click)="toggleSearchMenu($event)">
+        <span class="search-icon">
+          <i class="fa fa-search"></i>
+        </span>
+        <input
+          type="text"
+          placeholder="Buscar Mockups"
+          class="search-input"
+          (click)="toggleSearchMenu($event)"
+        />
+        <div class="search-actions">
+          <button class="action-btn"><i class="fa fa-random"></i></button>
+          <button class="action-btn"><i class="fa fa-instagram"></i></button>
+          <button class="action-btn"><i class="fa fa-search"></i></button>
+        </div>
+      </div>
+
+      <!-- Menú desplegable de búsqueda -->
+      <div class="search-dropdown" *ngIf="isSearchMenuOpen">
+        <div class="category-menu">
+          <a
+            href="#"
+            class="category-item"
+            [class.active]="activeCategory === 'vectores'"
+          >
+            <i class="fa fa-expand-arrows-alt"></i> Vectores
+          </a>
+          <a
+            href="#"
+            class="category-item"
+            [class.active]="activeCategory === 'ilustraciones'"
+          >
+            <i class="fa fa-paint-brush"></i> Ilustraciones
+          </a>
+          <a
+            href="#"
+            class="category-item"
+            [class.active]="activeCategory === 'fotos'"
+          >
+            <i class="fa fa-camera"></i> Fotos
+          </a>
+          <a
+            href="#"
+            class="category-item"
+            [class.active]="activeCategory === 'iconos'"
+          >
+            <i class="fa fa-icons"></i> Iconos
+          </a>
+          <a
+            href="#"
+            class="category-item"
+            [class.active]="activeCategory === 'videos'"
+          >
+            <i class="fa fa-video"></i> Videos
+          </a>
+          <a
+            href="#"
+            class="category-item"
+            [class.active]="activeCategory === 'psd'"
+          >
+            <i class="fa fa-file"></i> PSD
+          </a>
+          <a
+            href="#"
+            class="category-item"
+            [class.active]="activeCategory === 'plantillas'"
+          >
+            <i class="fa fa-copy"></i> Plantillas
+          </a>
+          <a
+            href="#"
+            class="category-item active"
+            [class.active]="activeCategory === 'mockups'"
+          >
+            <i class="fa fa-cube"></i> Mockups
+          </a>
+          <a
+            href="#"
+            class="category-item"
+            [class.active]="activeCategory === 'musica'"
+          >
+            <i class="fa fa-music"></i> Música
+          </a>
+        </div>
+
+        <div class="ai-options">
+          <a href="#" class="ai-option">
+            <i class="fa fa-magic"></i> Crear imagen con IA
+          </a>
+          <a href="#" class="ai-option">
+            <i class="fa fa-cube"></i> Crear mockup con IA
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <div class="popular-searches">
+      <span class="popular-label">Búsquedas populares:</span>
+      <a href="#" class="search-tag"><i class="fa fa-search"></i> sudadera</a>
+      <a href="#" class="search-tag"><i class="fa fa-search"></i> sitio web</a>
+      <a href="#" class="search-tag"><i class="fa fa-search"></i> caja</a>
+    </div>
+  </div>
+</section>
+
+<div class="premium-banner">
+  <div class="container">
+    <p class="premium-text">
+      ¿Buscas ideas frescas sobre mockups? Consigue acceso a contenido Premium
+      ahora
+    </p>
+    <button class="premium-btn">Elegir un plan</button>
+  </div>
+</div>
+
+<!-- Sección inspirate-->
+<section class="mockup-categories-section">
+  <div class="container">
+    <div class="heading-container">
+      <span class="inspire-text">INSPÍRATE</span>
+      <h2 class="main-heading">
+        Encuentra tu mockup favorito y materializa tus diseños
+      </h2>
+      <p class="sub-heading">
+        Para presentaciones de productos, promociones de marca, publicaciones en
+        redes sociales y cualquier otro proyecto o idea creativa que tengas en
+        mente.
+      </p>
+    </div>
+
+    <div class="categories-grid">
+      <a
+        *ngFor="let category of categories"
+        [routerLink]="category.link"
+        class="category-card"
+      >
+        <div class="image-container">
+          <img
+            [src]="category.image"
+            [alt]="category.title"
+            class="category-image"
+          />
+        </div>
+        <div class="category-title">
+          <h3>{{ category.title }}</h3>
+        </div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- Sección Mockups gratis para editar-->

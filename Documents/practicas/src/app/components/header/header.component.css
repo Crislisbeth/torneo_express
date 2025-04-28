@@ -1,0 +1,124 @@
+/* Header */
+.header {
+    background-color: white;
+    padding: 10px 20px;
+    border-bottom: 1px solid #ddd;
+}
+
+/* Navbar layout */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+/* Sección izquierda */
+.left-section {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+/* Logo */
+.logo {
+    font-weight: bold;
+    font-size: 1.6rem;
+    color: black;
+}
+
+/* Botón hamburguesa */
+.hamburger {
+    font-size: 24px;
+    background: none;
+    border: none;
+    color: black;
+    cursor: pointer;
+    display: none;
+}
+
+/* Sección derecha */
+.right-section {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+/* Botón login */
+.login-btn {
+    background-color: rgb(11, 84, 240);
+    color: white;
+    border: none;
+    padding: 6px 12px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+/* Enlace precios */
+.pricing {
+    color: black;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+/* Menú horizontal (escritorio) */
+.menu-container.desktop {
+    display: flex;
+    align-items: center;
+}
+
+.menu-container.desktop .nav-links {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.nav-links a {
+    color: black;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+/* Menú hamburguesa (móvil) */
+.menu-container.mobile {
+    display: none;
+    flex-direction: column;
+    background-color: white;
+    border-top: 1px solid #ccc;
+    padding: 1rem;
+    width: 100%;
+}
+
+.menu-container.mobile.open {
+    display: flex;
+}
+
+.menu-container.mobile .nav-links {
+    flex-direction: column;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.menu-container.mobile .nav-links li {
+    margin: 0.5rem 0;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .menu-container.desktop {
+        display: none;
+    }
+
+    .pricing {
+        display: none;
+    }
+
+    .hamburger {
+        display: block;
+    }
+}

@@ -1,0 +1,366 @@
+<!-- Seccion barra de buscar -->
+<!-- iconos.component.html -->
+<div class="search-container">
+  <!-- Encabezado principal -->
+  <div class="main-header">
+    <div class="icons-left">
+      <div class="icon blue-star"></div>
+      <div class="icon orange-chair"></div>
+      <div class="icon wifi"></div>
+    </div>
+    
+    <div class="title-section">
+      <h1>Encuentra iconos {{currentTitle}} que te apasionen </h1>
+      <p>Más de 10 millones de iconos PNG y SVG. Todos los que te puedas imaginar y más.</p>
+    </div>
+    
+    <div class="icons-right">
+      <div class="icon diamond"></div>
+      <div class="icon user-circle"></div>
+    </div>
+  </div>
+
+  <!-- Barra de búsqueda -->
+  <div class="search-bar-container" [class.expanded]="isSearchExpanded">
+    <div class="search-bar" (click)="toggleSearch()">
+      <i class="search-icon"></i>
+      <input 
+        type="text" 
+        placeholder="Buscar Iconos" 
+        [(ngModel)]="searchQuery"
+        (click)="$event.stopPropagation()"
+      >
+      <div class="search-actions">
+        <button class="action-button share"></button>
+        <button class="action-button camera"></button>
+        <button class="action-button magnify"></button>
+      </div>
+    </div>
+
+    <!-- Panel expandido (aparece al hacer clic en la barra de búsqueda) -->
+    <div class="expanded-panel" *ngIf="isSearchExpanded">
+      <!-- Categorías de búsqueda -->
+      <div class="search-categories">
+        <button class="category-button">Vectores</button>
+        <button class="category-button">Ilustraciones</button>
+        <button class="category-button">Fotos</button>
+        <button class="category-button active">Iconos</button>
+        <button class="category-button">Videos</button>
+        <button class="category-button">PSD</button>
+        <button class="category-button">Plantillas</button>
+        <button class="category-button">Mockups</button>
+        <button class="category-button">Música</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Búsquedas populares -->
+  <div class="popular-searches" *ngIf="!isSearchExpanded">
+    <span class="popular-label">Búsquedas populares:</span>
+    <button class="popular-search" *ngFor="let search of popularSearches">
+      <i class="search-small-icon"></i> {{ search }}
+    </button>
+  </div>
+</div>
+
+<!-- Seccion millon de iconos -->
+<div class="iconos-container">
+  <h1 class="main-title">Millones de iconos para cualquier proyecto que tengas en mente</h1>
+  
+  <div class="iconos-cards-container">
+    <!-- Carta 1: Iconos estáticos -->
+    <div class="iconos-card">
+      <div class="card-header">
+        <h2>Iconos estáticos</h2>
+        <p>Los iconos indicados para diseños claros y sencillos.</p>
+      </div>
+      <div class="card-image">
+        <!-- Aquí puedes colocar tu imagen de fondo o iconos ilustrativos -->
+        <div class="icon-examples">
+          <div class="icon-bubble">📁</div>
+          <div class="icon-bubble">🔗</div>
+          <div class="icon-bubble">📱</div>
+        </div>
+      </div>
+      <div class="card-footer">
+        <span class="format-tag">SVG</span>
+        <span class="format-tag">PNG</span>
+      </div>
+    </div>
+
+    <!-- Carta 2: Iconos de interfaz -->
+    <div class="iconos-card">
+      <div class="card-header">
+        <h2>Iconos de interfaz</h2>
+        <p>Haz que tu web y tus apps destaquen gracias a unos estupendos iconos.</p>
+      </div>
+      <div class="card-image">
+        <div class="icon-examples">
+          <div class="icon-bubble">📊</div>
+          <div class="icon-bubble">🔍</div>
+          <div class="icon-bubble">📝</div>
+        </div>
+      </div>
+      <div class="card-footer">
+        <span class="format-tag">ANDROID</span>
+        <span class="format-tag">iOS</span>
+        <span class="format-tag">CSS</span>
+        <span class="format-tag">SVG</span>
+        <span class="format-tag">PNG</span>
+      </div>
+    </div>
+
+    <!-- Carta 3: Iconos animados -->
+    <div class="iconos-card">
+      <div class="card-header">
+        <h2>Iconos animados</h2>
+        <p>Tu trabajo cobrará vida con iconos dinámicos.</p>
+      </div>
+      <div class="card-image">
+        <div class="icon-examples">
+          <div class="icon-bubble animated">🔄</div>
+          <div class="icon-bubble animated">✨</div>
+          <div class="icon-bubble animated">👥</div>
+        </div>
+      </div>
+      <div class="card-footer">
+        <span class="format-tag">JSON</span>
+        <span class="format-tag">MP4</span>
+        <span class="format-tag">GIF</span>
+        <span class="format-tag">SVG</span>
+        <span class="format-tag">PNG</span>
+      </div>
+    </div>
+
+    <!-- Carta 4: Stickers -->
+    <div class="iconos-card">
+      <div class="card-header">
+        <h2>Stickers</h2>
+        <p>Dales un toque divertido a tus diseños o a tus páginas web.</p>
+      </div>
+      <div class="card-image">
+        <div class="icon-examples">
+          <div class="icon-bubble">🐱</div>
+          <div class="icon-bubble">🌈</div>
+          <div class="icon-bubble">🚀</div>
+        </div>
+      </div>
+      <div class="card-footer">
+        <span class="format-tag">SVG</span>
+        <span class="format-tag">PNG</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Seccion confia en la familia de iconos -->
+<div class="familias-iconos-container">
+  <div class="familias-header">
+    <div class="header-text">
+      <h2>Confía en las <span class="text-primary">familias de iconos</span></h2>
+      <p>Todo está bajo control. Las familias de iconos facilitan la búsqueda de iconos por autor y aseguran la coherencia visual de tus diseños.</p>
+    </div>
+    <div class="header-action">
+      <button class="btn-discover">
+        <i class="search-icon">🔍</i>
+        Descubrir más familias
+      </button>
+    </div>
+  </div>
+
+  <div class="familias-grid">
+    <!-- Primera fila de familias -->
+    <div class="familia-card" *ngFor="let familia of familias">
+      <div class="icons-grid">
+        <div class="icon-item" *ngFor="let icon of familia.icons">
+          <img [src]="icon" alt="Icono de la familia" class="icon-image">
+        </div>
+      </div>
+      <div class="familia-footer">
+        <div class="familia-info">
+          <h3 class="familia-title">{{ familia.title }}</h3>
+          <p class="familia-source">Iconos de <a href="#" class="source-link">{{ familia.source }}</a></p>
+        </div>
+        <button class="btn-generate">
+          <i class="generate-icon">⚡</i>
+          Generar
+          <span class="beta-badge">BETA</span>
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Seccion descubre las novedades -->
+<div class="novedades-container">
+  <h2 class="novedades-title">Descubre las novedades</h2>
+  
+  <div class="novedades-cards">
+    <!-- Tarjeta 1: Generador de iconos -->
+    <div class="novedad-card generator-card">
+      <div class="card-content">
+        <div class="card-text">
+          <h3 class="card-title">
+            Generador de iconos 
+            <span class="beta-badge">BETA</span>
+          </h3>
+          <p class="card-description">
+            Crea tus propios iconos al instante con nuestra nueva herramienta de IA.
+          </p>
+          <button class="btn-action">Probar ahora</button>
+        </div>
+        <div class="card-image">
+          <img src="assets/images/generator-preview.png" alt="Generador de iconos" class="feature-image">
+        </div>
+      </div>
+    </div>
+    
+    <!-- Tarjeta 2: Edita stickers e iconos -->
+    <div class="novedad-card editor-card">
+      <div class="card-content">
+        <div class="card-text">
+          <h3 class="card-title">Edita stickers e iconos</h3>
+          <p class="card-description">
+            Mezcla colores, prueba degradados y juega con las formas para que todo esté a tu gusto.
+          </p>
+          <button class="btn-info">Más información</button>
+        </div>
+        <div class="card-image">
+          <img src="assets/images/editor-preview.png" alt="Editor de iconos" class="feature-image">
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Seccion catalogo y formatos -->
+<!-- iconos.component.html -->
+<div class="catalogo-container">
+  <div class="catalogo-header">
+    <h1>Un catálogo, <span class="blue-text">dos formatos</span>: iconos <span class="blue-text">PNG gratis</span> y <span class="blue-text">SVG</span> editables Premium</h1>
+    <p class="catalogo-descripcion">
+      Más de 10 mil iconos en formato PNG para usar directamente y con licencia gratuita. 
+      También disponibles en formato SVG completamente editable bajo licencia Premium. Tú decides.
+    </p>
+  </div>
+
+  <div class="iconos-grid">
+    <div class="icono-categoria" *ngFor="let estilo of estilosIconos">
+      <div class="icono-preview">
+        <div class="iconos-grupo">
+          <img *ngFor="let imagen of estilo.imagenes.slice(0, 9)" [src]="imagen" alt="Icono">
+        </div>
+        <div class="hover-info">
+          <p class="hover-descripcion">{{ estilo.descripcion }}</p>
+        </div>
+      </div>
+      <div class="categoria-info">
+        <h3>{{ estilo.nombre }}</h3>
+        <p>{{ estilo.cantidad }}</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Seccion catalogo gratuito -->
+<!-- Añade esto a tu iconos.component.html -->
+<div class="beneficios-container">
+  <div class="beneficios-header">
+    <h1>El <span class="blue-text">catálogo gratuito de iconos</span> más grande del mundo</h1>
+    <p class="beneficios-descripcion">
+      Potencia tus creaciones gracias al lenguaje universal de los iconos. Encuéntralos todos en Freepik.
+    </p>
+  </div>
+
+  <div class="beneficios-grid">
+    <div class="beneficio-item" *ngFor="let beneficio of beneficios">
+      <div class="beneficio-icon">
+        <img [src]="beneficio.icono" alt="Ícono">
+      </div>
+      <h3>{{ beneficio.titulo }}</h3>
+      <p>
+        {{ beneficio.descripcion }}
+        <a *ngIf="beneficio.enlace" [href]="beneficio.enlaceUrl" class="beneficio-link">{{ beneficio.enlace }}</a>.
+      </p>
+    </div>
+  </div>
+</div>
+
+<!-- Seccion seleccion del artista-->
+<!-- iconos.component.html -->
+<div class="app-seleccion-artista">
+  <div class="seleccion-artista-container">
+    <div class="seleccion-header">
+      <h2>Selección del <span class="blue-text">artista</span></h2>
+      <button class="mas-iconos-btn">
+        <i class="search-icon"></i>
+        Más iconos populares
+      </button>
+    </div>
+
+    <div class="iconos-grid">
+      <div class="icono-item" *ngFor="let icono of iconosArtistas">
+        <div class="icono-wrapper">
+          <img [src]="icono.imagen" alt="Icono" class="icono-img">
+          <div class="icono-hover-opciones" *ngIf="icono.opciones && icono.opciones.length > 0">
+            <div class="opciones-container">
+              <div class="opcion-download">
+                <i class="download-icon"></i>
+              </div>
+              <div class="separator"></div>
+              <div class="formato-opciones">
+                <span *ngFor="let opcion of icono.opciones" class="formato-opcion">{{ opcion }}</span>
+              </div>
+              <div class="separator"></div>
+              <div class="opcion-coleccion">
+                <i class="coleccion-icon"></i>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Seccion registrate gratis
+<div class="registro-banner">
+  <div class="registro-content">
+    <div class="texto-registro">
+      <h2 class="registro-titulo">Regístrate gratis y consigue 10 descargas al día</h2>
+      
+      <p class="registro-descripcion">
+        Guarda los iconos, fotos e imágenes favoritas. Crea tus propias colecciones y sigue a tus artistas que más te gusten. Además, disfruta de 10 descargas gratuitas al día.
+      </p>
+      
+      <p class="registro-garantia">
+        No necesitamos los datos de tu tarjeta. Tampoco es un periodo de prueba. Es gratis para siempre.
+      </p>
+      
+      <button class="register-btn" (click)="irARegistro()">Registrarse</button>    </div>
+    
+    <div class="iconos-grid">
+      <div class="icono-container" *ngFor="let icono of iconos">
+        <div class="icono-item">
+          <img [src]="icono" alt="Icono" class="icono-img">
+        </div>
+      </div>
+    </div>
+  </div>
+</div>-->
+
+<!-- Sección FAQ-->
+<div class="faq-container">
+  <h2>FAQ</h2>
+
+  <div class="faq-item" *ngFor="let faq of faqs; let i = index">
+    <div class="faq-question" (click)="toggle(i)">
+      <h3>{{ faq.question }}</h3>
+      <span class="toggle-icon">{{ faq.open ? '—' : '+' }}</span>
+    </div>
+    
+    <div class="faq-answer" *ngIf="faq.open">
+      <p>{{ faq.answer }}</p>
+    </div>
+  </div>
+</div>
+

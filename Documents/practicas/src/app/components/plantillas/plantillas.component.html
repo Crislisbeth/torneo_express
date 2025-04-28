@@ -1,0 +1,35 @@
+<div class="banner">
+  <div class="banner-content">
+    <h1>Diseña y edita plantillas online</h1>
+    <p>
+      ¿Todo listo para empezar a crear? Elabora y comparte diseños profesionales
+      para tu marca, tu negocio o tus redes sociales. ¡No necesitas ningún
+      programa especializado!
+    </p>
+    <div class="search-box">
+      <input type="text" placeholder="Buscar Plantillas" />
+      <button>🔍 Buscar</button>
+    </div>
+    <div class="popular-searches">
+      <span>Búsquedas populares:</span>
+      <button>📌 Logos</button>
+      <button>📌 Tarjetas de visita</button>
+      <button>📌 Flyers</button>
+    </div>
+  </div>
+</div>
+
+<div class="format-selection">
+  <h2>Plantillas en blanco para editar sobre la marcha</h2>
+  <p>
+    ¿Te apetece empezar desde cero? Los formatos predefinidos lo ponen más fácil
+    y te ayudan a poner toda tu creatividad en marcha.
+  </p>
+
+  <div class="formats">
+    <div class="format-card" *ngFor="let format of formatos">
+      <img [src]="format.img" alt="{{ format.nombre }}" />
+      <p>{{ format.nombre }}</p>
+    </div>
+  </div>
+</div>

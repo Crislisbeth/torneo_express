@@ -1,0 +1,233 @@
+
+<div class="gallery-container">
+    <div class="gallery-header">
+      <h1 class="main-title">Imágenes vectoriales para todo tipo de proyectos</h1>
+      <p class="subtitle">Explora categorías de imágenes seleccionadas y dales a tus diseños el toque final perfecto</p>
+    </div>
+  
+    <div class="categories-grid">
+      <!-- Primera fila -->
+      <div class="row first-row">
+        @for (category of categories.slice(0, 3); track category.id) {
+          <div class="category-card wide" (click)="onCategoryClick(category)">
+            <div class="card-content" [style.background-image]="'url(' + category.imageUrl + ')'">
+              <div class="category-title">{{ category.title }}</div>
+            </div>
+          </div>
+        }
+      </div>
+  
+      <!-- Segunda fila -->
+      <div class="row second-row">
+        @for (category of categories.slice(3, 6); track category.id) {
+          <div class="category-card medium" (click)="onCategoryClick(category)">
+            <div class="card-content" [style.background-image]="'url(' + category.imageUrl + ')'">
+              <div class="category-title">{{ category.title }}</div>
+            </div>
+          </div>
+        }
+      </div>
+  
+      <!-- Tercera fila -->
+      <div class="row third-row">
+        @for (category of categories.slice(6, 9); track category.id) {
+          <div class="category-card medium" (click)="onCategoryClick(category)">
+            <div class="card-content" [style.background-image]="'url(' + category.imageUrl + ')'">
+              <div class="category-title">{{ category.title }}</div>
+            </div>
+          </div>
+        }
+      </div>
+    </div>
+    <!-- Añade esta sección dentro de tu template existente -->
+<div class="featured-container">
+  <div class="featured-header">
+    <h2>Los vectores más destacados</h2>
+    <button class="discover-button">Descubrir vectores gratuitos</button>
+  </div>
+  
+  <div class="featured-gallery">
+    <div class="gallery-item main-item">
+      <img [src]="featuredVectors[0].imageUrl" [alt]="featuredVectors[0].altText">
+    </div>
+    
+    <div class="gallery-grid">
+      <div class="gallery-item" *ngFor="let vector of featuredVectors.slice(1)">
+        <img [src]="vector.imageUrl" [alt]="vector.altText">
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+
+
+<!-- Temas de Vectores -->
+<div class="vector-themes">
+  <h2>¿Necesitas ideas para diseñar con vectores? Has venido al sitio adecuado</h2>
+  <p class="themes-subtitle">Descubre los temas más buscados y encuentra los vectores que necesitas</p>
+
+  <!-- Filtro de Categorías -->
+  <div class="theme-filters">
+    <button *ngFor="let category of ['Eventos', 'Objetos', 'Naturaleza', 'Otros']"
+            (click)="setActiveThemeCategory(category)">
+      {{ category }}
+    </button>
+  </div>
+
+  <!-- Cuadrícula de Temas -->
+  <div class="themes-grid">
+    <div class="theme-card" *ngFor="let theme of filteredThemes" (click)="onThemeClick(theme)">
+      <img [src]="theme.imageUrl" alt="{{ theme.title }}">
+      <h3>{{ theme.title }}</h3>
+    </div>
+  </div>
+</div>
+
+<section class="vector-collections">
+  <h2>Mantén la coherencia en tus diseños vectoriales</h2>
+  <p class="collections-subtitle">
+    Encuentra todos los vectores de una misma serie para conseguir una mayor uniformidad en tus proyectos
+  </p>
+
+  <div class="collection-grid">
+    <div class="collection-card" *ngFor="let collection of vectorCollections">
+      <div class="main-image">
+        <img [src]="collection.mainImage" alt="Main image">
+        <span class="badge">10 images</span>
+      </div>
+      <div class="thumbnail-grid">
+        <img *ngFor="let img of collection.thumbnails" [src]="img" alt="Thumbnail">
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="galeria-container">
+  <div class="galeria-header">
+    <h1>La galería de vectores gratuitos que te inspirará</h1>
+    <p>Explora estas colecciones y descubre una selección de imágenes vectoriales, ideas y estilos que pondrán tu creatividad en marcha</p>
+    <button class="btn-explorar">Explorar colecciones</button>
+  </div>
+
+  <div class="colecciones-grid">
+    <!-- Colección 1 -->
+    <div class="coleccion-card">
+      <div class="coleccion-imagenes">
+        <div class="grid-2x2">
+          <img src="assets/images/degradados/degradado1.jpg" alt="Degradado colorido">
+          <img src="assets/images/degradados/degradado2.jpg" alt="Degradado colorido">
+          <img src="assets/images/degradados/degradado3.jpg" alt="Degradado colorido">
+          <img src="assets/images/degradados/degradado4.jpg" alt="Degradado colorido">
+        </div>
+      </div>
+      <div class="coleccion-info">
+        <div class="coleccion-titulo">
+          <h3>Degradados coloridos</h3>
+          <p>113 recursos</p>
+        </div>
+        <button class="btn-opciones">
+          <i class="fas fa-ellipsis-v"></i>
+        </button>
+      </div>
+    </div>
+
+    <!-- Colección 2 -->
+    <div class="coleccion-card">
+      <div class="coleccion-imagenes">
+        <div class="grid-2x2">
+          <img src="assets/images/3d/vista3d1.jpg" alt="Vista vectorial 3D">
+          <img src="assets/images/3d/vista3d2.jpg" alt="Vista vectorial 3D">
+        </div>
+      </div>
+      <div class="coleccion-info">
+        <div class="coleccion-titulo">
+          <h3>Vistas vectoriales 3D</h3>
+          <p>100 recursos</p>
+        </div>
+        <button class="btn-opciones">
+          <i class="fas fa-ellipsis-v"></i>
+        </button>
+      </div>
+    </div>
+
+    <!-- Colección 3 -->
+    <div class="coleccion-card">
+      <div class="coleccion-imagenes">
+        <div class="grid-2x2">
+          <img src="assets/images/ilustraciones/ilustracion1.jpg" alt="Ilustración a mano">
+          <img src="assets/images/ilustraciones/ilustracion2.jpg" alt="Ilustración a mano">
+        </div>
+      </div>
+      <div class="coleccion-info">
+        <div class="coleccion-titulo">
+          <h3>Ilustraciones a mano</h3>
+          <p>50 recursos</p>
+        </div>
+        <button class="btn-opciones">
+          <i class="fas fa-ellipsis-v"></i>
+        </button>
+      </div>
+    </div>
+
+    <!-- Colección 4 -->
+    <div class="coleccion-card">
+      <div class="coleccion-imagenes">
+        <div class="grid-2x2">
+          <img src="assets/images/color2024/color1.jpg" alt="Color del año 2024">
+          <img src="assets/images/color2024/color2.jpg" alt="Color del año 2024">
+          <img src="assets/images/color2024/color3.jpg" alt="Color del año 2024">
+        </div>
+      </div>
+      <div class="coleccion-info">
+        <div class="coleccion-titulo">
+          <h3>Color del año 2024</h3>
+          <p>68 recursos</p>
+        </div>
+        <button class="btn-opciones">
+          <i class="fas fa-ellipsis-v"></i>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Artículos relacionados -->
+  <div class="articulos-section">
+    <h2>Artículos relacionados</h2>
+
+    <div class="articulos-grid">
+      <!-- Artículo 1 -->
+      <div class="articulo-card">
+        <div class="articulo-imagen">
+          <img src="assets/images/articulos/clipart.jpg" alt="Qué es clip art">
+        </div>
+        <div class="articulo-contenido">
+          <h3>¿Qué es clip art?</h3>
+          <p>Tanto si te dedicas al diseño gráfico o al marketing como si eres sencillamente una persona entusiasta de la creatividad, es probable que te hayas topado alguna vez con el clip art a la hora de preparar presentaciones o de diseñar...</p>
+        </div>
+      </div>
+
+      <!-- Artículo 2 -->
+      <div class="articulo-card">
+        <div class="articulo-imagen">
+          <img src="assets/images/articulos/principios.jpg" alt="Principios de diseño">
+        </div>
+        <div class="articulo-contenido">
+          <h3>Principios de diseño y cómo aplicarlos</h3>
+          <p>El diseño es un elemento esencial a la hora de concebir un proyecto atractivo desde el punto de vista visual. Independientemente de que te dediques al diseño gráfico o seas estudiante, creativo o especialista en marketing, tienes que comprender los principios de diseño...</p>
+        </div>
+      </div>
+
+      <!-- Artículo 3 -->
+      <div class="articulo-card">
+        <div class="articulo-imagen">
+          <img src="assets/images/articulos/personaje.jpg" alt="Crear un personaje vectorial">
+        </div>
+        <div class="articulo-contenido">
+          <h3>Cómo crear un personaje vectorial desde el boceto</h3>
+          <p>Ahora podemos coger ideas oníricas, o incluso prehistóricas, y convertirlas en cualquier cosa que queramos. Y cuando nos referimos a cualquier cosa no estamos exagerando, porque precisamente esa es la belleza del diseño de personajes vectoriales...</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+

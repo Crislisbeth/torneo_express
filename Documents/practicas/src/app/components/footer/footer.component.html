@@ -1,0 +1,78 @@
+<footer class="footer">
+  <div class="footer-container">
+    <div class="footer-section">
+      <h3>SUITE IA</h3>
+      <ul>
+        <li><a href="#">Generador de imágenes con IA</a></li>
+        <li><a href="#">Generador de videos con IA</a></li>
+        <li><a href="#">Mejorar calidad de imagen</a></li>
+        <li><a href="#">Quitar fondos</a></li>
+        <li><a href="#">Editor de fotos</a></li>
+        <li><a href="#">Generador de voz con IA</a></li>
+        <li><a href="#">Todas las herramientas</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-section">
+      <h3>INFORMACIÓN</h3>
+      <ul>
+        <li><a href="#">Precios</a></li>
+        <li><a href="#">Sobre nosotros</a></li>
+        <li><a href="#">API</a></li>
+        <li><a href="#">Oportunidades de empleo</a></li>
+        <li><a href="#">Vender contenido</a></li>
+        <li><a href="#">Manual de marca</a></li>
+        <li><a href="#">Tendencias de búsqueda</a></li>
+        <li><a href="#">Blog</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-section">
+      <h3>LEGAL</h3>
+      <ul>
+        <li><a href="#">Términos de uso</a></li>
+        <li><a href="#">Acuerdo de licencia</a></li>
+        <li><a href="#">Política de privacidad</a></li>
+        <li><a href="#">Información de copyright</a></li>
+        <li><a href="#">Política de cookies</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-section">
+      <h3>SOPORTE</h3>
+      <ul>
+        <li><a href="#">Preguntas frecuentes</a></li>
+        <li><a href="#">Contactar</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-section redes-sociales">
+      <h3>REDES SOCIALES</h3>
+      <div class="social-icons">
+        <a href="#"><img src="/assets/icons/facebook.png" alt="Facebook" /></a>
+        <a href="#"><img src="/assets/icons/twitter.png" alt="Twitter" /></a>
+        <a href="#"><img src="/assets/icons/instagram.png" alt="Instagram" /></a>
+        <a href="#"><img src="/assets/icons/linkedin.png" alt="LinkedIn" /></a>
+        <a href="#"><img src="/assets/icons/youtube.png" alt="YouTube" /></a>
+      </div>
+      <p>Recibe contenido exclusivo en tu correo</p>
+      <button class="register-btn" (click)="irARegistro()">Registrarse</button>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    <p>© 2010-2025 Freepik Company S.L. Todos los derechos reservados.</p>
+    <div class="language-selector" (click)="toggleIdiomaDropdown()" tabindex="0" (blur)="cerrarDropdown()">
+      <button class="language-btn">
+        {{ idiomaActual }} ▼
+      </button>
+      <ul class="idioma-dropdown" *ngIf="mostrarIdiomas">
+        <li (click)="cambiarIdioma('Español')">Español</li>
+        <li (click)="cambiarIdioma('Inglés')">Inglés</li>
+        <li (click)="cambiarIdioma('Francés')">Francés</li>
+        <li (click)="cambiarIdioma('Alemán')">Alemán</li>
+      </ul>
+    </div>
+  </div> <!-- ← faltaba este cierre -->
+</footer>
+

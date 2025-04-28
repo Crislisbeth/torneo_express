@@ -1,0 +1,684 @@
+/*Seccion buscar*/
+/* Importar fuentes e íconos (si no lo has hecho en tu index.html) */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap');
+@import url('https://fonts.googleapis.com/icon?family=Material+Icons');
+
+/* Contenedor principal con la imagen de fondo */
+.hero-search-container {
+    width: 100%;
+    position: relative;
+    font-family: 'Roboto', sans-serif;
+}
+
+.hero-background {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('/assets/ilustraciones/background.jpg');
+    /* Reemplaza con la ruta de tu imagen */
+    background-size: cover;
+    background-position: center;
+    height: 400px;
+    /* Ajusta según necesites */
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 0 20px;
+    color: white;
+    text-align: center;
+}
+
+/* Overlay oscuro para mejorar legibilidad del texto */
+.hero-background::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: rgba(0, 0, 0, 0.3);
+    /* Ajusta la opacidad según necesites */
+    z-index: 1;
+}
+
+/* Contenido sobre la imagen */
+.hero-text,
+.search-container,
+.popular-searches {
+    position: relative;
+    z-index: 2;
+}
+
+.hero-text {
+    margin-bottom: 30px;
+}
+
+.hero-text h1 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 15px;
+    color: #ffffff;
+}
+
+.hero-text p {
+    font-size: 1.2rem;
+    font-weight: 300;
+    margin-bottom: 25px;
+    color: #ffffff;
+}
+
+/* Search Container */
+.search-container {
+    position: relative;
+    width: 100%;
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+/* Search Bar Styles */
+.search-bar {
+    background-color: white;
+    border-radius: 50px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+    padding: 12px 20px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.search-bar:hover {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+.search-input-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.search-icon {
+    color: #666;
+    margin-right: 10px;
+    font-size: 22px;
+}
+
+.search-input {
+    flex: 1;
+    border: none;
+    background: transparent;
+    font-size: 16px;
+    outline: none;
+    padding: 8px 0;
+    color: #333;
+}
+
+.search-input::placeholder {
+    color: #999;
+}
+
+.action-icons {
+    display: flex;
+    gap: 15px;
+}
+
+.icon-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: #666;
+    padding: 5px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.icon-btn:hover {
+    background-color: #f5f5f5;
+}
+
+/* Search Panel Styles */
+.search-panel {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background-color: white;
+    border-radius: 12px;
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+    padding: 20px;
+    margin-top: 10px;
+    z-index: 100;
+    animation: fadeIn 0.25s ease-in-out;
+    color: #333;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.categories {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-bottom: 15px;
+}
+
+.category-btn {
+    padding: 8px 16px;
+    border-radius: 50px;
+    background-color: #f5f5f5;
+    border: 1px solid #eaeaea;
+    cursor: pointer;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: all 0.2s ease;
+    color: #333;
+    font-weight: 500;
+}
+
+.category-btn:hover {
+    background-color: #eaeaea;
+}
+
+.category-btn.active {
+    background-color: #e0f2ff;
+    border-color: #b3d7ff;
+    color: #0073e6;
+}
+
+.second-row {
+    margin-bottom: 20px;
+}
+
+.ai-options {
+    border-top: 1px solid #eaeaea;
+    padding-top: 15px;
+}
+
+.ai-option {
+    padding: 12px 0;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    color: #333;
+    font-weight: 500;
+}
+
+.ai-option:hover {
+    color: #0073e6;
+}
+
+/* Popular searches styles */
+.popular-searches {
+    margin-top: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+.popular-label {
+    font-weight: 500;
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.popular-tag {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    padding: 5px 12px;
+    border-radius: 50px;
+    background-color: rgba(255, 255, 255, 0.2);
+    color: white;
+    text-decoration: none;
+    font-size: 14px;
+    transition: all 0.2s ease;
+}
+
+.popular-tag .material-icons {
+    font-size: 16px;
+}
+
+.popular-tag:hover {
+    background-color: rgba(255, 255, 255, 0.3);
+}
+
+/* Para dispositivos móviles */
+@media (max-width: 768px) {
+    .hero-text h1 {
+        font-size: 1.8rem;
+    }
+
+    .hero-text p {
+        font-size: 1rem;
+    }
+
+    .search-container {
+        width: 90%;
+    }
+
+    .categories {
+        gap: 8px;
+    }
+
+    .category-btn {
+        padding: 6px 12px;
+        font-size: 13px;
+    }
+
+    .popular-searches {
+        flex-direction: column;
+    }
+}
+
+/*Seccion ilustraciones de primera*/
+.ilustraciones-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+.ilustraciones-container h1 {
+    font-size: 2rem;
+    color: #111;
+    margin-bottom: 1rem;
+}
+
+.ilustraciones-container p {
+    font-size: 1rem;
+    color: #555;
+    line-height: 1.6;
+    margin-bottom: 2rem;
+}
+
+.ilustraciones-container h2 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    color: #222;
+}
+
+.galeria {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1rem;
+}
+
+.galeria img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.galeria img:hover {
+    transform: scale(1.05);
+}
+
+.galeria-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+    grid-auto-rows: 200px;
+}
+
+.img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+/* Imagen grande (ocupa 2 columnas y 2 filas) */
+.img-large {
+    grid-column: span 2;
+    grid-row: span 2;
+}
+
+/* Imagen ancha (ocupa 2 columnas) */
+.img-wide {
+    grid-column: span 2;
+}
+
+/*Sección naturaleza, eventos, estilo, personas*/
+.categorias-container {
+    padding: 2rem;
+}
+
+.filtros {
+    display: flex;
+    gap: 2rem;
+    justify-content: center;
+    margin-bottom: 2rem;
+    font-weight: 600;
+}
+
+.filtros a {
+    color: #555;
+    text-decoration: none;
+    padding-bottom: 0.5rem;
+    position: relative;
+}
+
+.filtros a.activo {
+    color: #000;
+    font-weight: bold;
+}
+
+.filtros a.activo::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 2px;
+    width: 100%;
+    background-color: #000;
+}
+
+.galeria {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 1.5rem;
+}
+
+.tarjeta {
+    position: relative;
+    border-radius: 10px;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.tarjeta img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.etiqueta {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.7), transparent);
+    color: white;
+    padding: 0.5rem 1rem;
+    font-weight: bold;
+    font-size: 0.95rem;
+}
+
+/*Sección ilustra conceptos*/
+.ilustraciones-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    font-family: 'Arial', sans-serif;
+    background-color: #ffffff;
+}
+
+.ilustracion-section {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 40px 0;
+    gap: 40px;
+}
+
+.content-col {
+    flex: 1;
+    max-width: 50%;
+}
+
+.image-col {
+    flex: 1;
+    max-width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.illustration-image {
+    max-width: 100%;
+    height: auto;
+}
+
+h2 {
+    font-size: 28px;
+    font-weight: bold;
+    color: #000000;
+    margin-bottom: 20px;
+    line-height: 1.2;
+}
+
+p {
+    font-size: 16px;
+    line-height: 1.6;
+    color: #666666;
+}
+
+/* Estilos específicos para la primera sección */
+.ilustracion-section:first-child h2 {
+    font-size: 28px;
+}
+
+/* Estilos específicos para la segunda sección */
+.segunda-seccion {
+    margin-top: 20px;
+}
+
+.segunda-seccion h2 {
+    color: #000000;
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+    .ilustracion-section {
+        flex-direction: column;
+        padding: 20px 0;
+    }
+
+    .content-col,
+    .image-col {
+        max-width: 100%;
+    }
+
+    .segunda-seccion .content-col {
+        order: 1;
+    }
+
+    .segunda-seccion .image-col {
+        order: 2;
+    }
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+
+    .ilustracion-section,
+    .ilustracion-section.reverse {
+        flex-direction: column;
+    }
+
+    .content-col {
+        order: 1;
+    }
+
+    .image-col {
+        order: 2;
+        margin-top: 20px;
+    }
+}
+
+/*Sección FAQ*/
+.faq-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    font-family: 'Arial', sans-serif;
+}
+
+h1 {
+    color: #000;
+    font-size: 32px;
+    font-weight: bold;
+    margin-bottom: 30px;
+}
+
+.faq-item {
+    border-bottom: 1px solid #e5e5e5;
+}
+
+.faq-question {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 0;
+    cursor: pointer;
+    color: #3374db;
+    font-size: 18px;
+    font-weight: 500;
+}
+
+.faq-icon {
+    font-size: 24px;
+    color: #3374db;
+}
+
+/* Estilos para el estado cerrado */
+.faq-answer {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease-out;
+    opacity: 0;
+    transition: max-height 0.3s ease-out, opacity 0.3s ease-out;
+}
+
+/* Estilos para el estado abierto */
+.faq-answer.faq-open {
+    max-height: 1000px;
+    opacity: 1;
+    transition: max-height 0.5s ease-in, opacity 0.5s ease-in;
+}
+
+.faq-answer p {
+    padding: 0 0 20px;
+    margin: 0;
+    line-height: 1.6;
+    color: #666;
+}
+
+/*Sección articulos relacionados*/
+.articulos-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 40px 20px;
+    background-color: #f9f9f9;
+    font-family: 'Arial', sans-serif;
+}
+
+h2 {
+    font-size: 28px;
+    color: #333;
+    margin-bottom: 30px;
+    font-weight: bold;
+}
+
+.articulos-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+}
+
+.articulo-card {
+    background: #fff;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.articulo-card:hover {
+    transform: translateY(-5px);
+}
+
+.articulo-imagen {
+    width: 100%;
+    height: 200px;
+    overflow: hidden;
+}
+
+.articulo-imagen img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.articulo-card:hover .articulo-imagen img {
+    transform: scale(1.05);
+}
+
+.articulo-content {
+    padding: 20px;
+}
+
+.articulo-content h3 {
+    font-size: 18px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 10px;
+    line-height: 1.3;
+}
+
+.articulo-content p {
+    font-size: 14px;
+    color: #666;
+    line-height: 1.5;
+}
+
+/* Responsive adjustments */
+@media (max-width: 992px) {
+    .articulos-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .articulos-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .articulo-imagen {
+        height: 180px;
+    }
+}
+
+/*Responsive*/
+@media (max-width: 768px) {
+    .galeria-grid {
+        grid-template-columns: repeat(2, 1fr);
+        grid-auto-rows: 150px;
+    }
+
+    .img-large {
+        grid-column: span 2;
+        grid-row: span 2;
+    }
+
+    .img-wide {
+        grid-column: span 2;
+    }
+}
