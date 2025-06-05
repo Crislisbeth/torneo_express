@@ -1,26 +1,18 @@
 {
   "roots": [
-    "games_organizer"
+    "torneo_express"
   ],
   "packages": [
     {
-      "name": "games_organizer",
-      "version": "1.0.0+1",
+      "name": "torneo_express",
+      "version": "0.0.0",
       "dependencies": [
-        "cupertino_icons",
         "flutter",
-        "google_fonts"
+        "http",
+        "intl"
       ],
       "devDependencies": [
-        "flutter_lints",
         "flutter_test"
-      ]
-    },
-    {
-      "name": "flutter_lints",
-      "version": "5.0.0",
-      "dependencies": [
-        "lints"
       ]
     },
     {
@@ -52,19 +44,22 @@
       ]
     },
     {
-      "name": "google_fonts",
-      "version": "6.2.1",
+      "name": "http",
+      "version": "0.13.6",
       "dependencies": [
-        "crypto",
-        "flutter",
-        "http",
-        "path_provider"
+        "async",
+        "http_parser",
+        "meta"
       ]
     },
     {
-      "name": "cupertino_icons",
-      "version": "1.0.8",
-      "dependencies": []
+      "name": "intl",
+      "version": "0.18.1",
+      "dependencies": [
+        "clock",
+        "meta",
+        "path"
+      ]
     },
     {
       "name": "flutter",
@@ -77,11 +72,6 @@
         "sky_engine",
         "vector_math"
       ]
-    },
-    {
-      "name": "lints",
-      "version": "5.1.1",
-      "dependencies": []
     },
     {
       "name": "vm_service",
@@ -242,32 +232,13 @@
       ]
     },
     {
-      "name": "crypto",
-      "version": "3.0.6",
+      "name": "http_parser",
+      "version": "4.1.2",
       "dependencies": [
+        "collection",
+        "source_span",
+        "string_scanner",
         "typed_data"
-      ]
-    },
-    {
-      "name": "path_provider",
-      "version": "2.1.5",
-      "dependencies": [
-        "flutter",
-        "path_provider_android",
-        "path_provider_foundation",
-        "path_provider_linux",
-        "path_provider_platform_interface",
-        "path_provider_windows"
-      ]
-    },
-    {
-      "name": "http",
-      "version": "1.4.0",
-      "dependencies": [
-        "async",
-        "http_parser",
-        "meta",
-        "web"
       ]
     },
     {
@@ -280,92 +251,6 @@
       "version": "1.4.0",
       "dependencies": [
         "collection"
-      ]
-    },
-    {
-      "name": "path_provider_windows",
-      "version": "2.3.0",
-      "dependencies": [
-        "ffi",
-        "flutter",
-        "path",
-        "path_provider_platform_interface"
-      ]
-    },
-    {
-      "name": "path_provider_platform_interface",
-      "version": "2.1.2",
-      "dependencies": [
-        "flutter",
-        "platform",
-        "plugin_platform_interface"
-      ]
-    },
-    {
-      "name": "path_provider_linux",
-      "version": "2.2.1",
-      "dependencies": [
-        "ffi",
-        "flutter",
-        "path",
-        "path_provider_platform_interface",
-        "xdg_directories"
-      ]
-    },
-    {
-      "name": "path_provider_foundation",
-      "version": "2.4.1",
-      "dependencies": [
-        "flutter",
-        "path_provider_platform_interface"
-      ]
-    },
-    {
-      "name": "path_provider_android",
-      "version": "2.2.17",
-      "dependencies": [
-        "flutter",
-        "path_provider_platform_interface"
-      ]
-    },
-    {
-      "name": "web",
-      "version": "1.1.1",
-      "dependencies": []
-    },
-    {
-      "name": "http_parser",
-      "version": "4.1.2",
-      "dependencies": [
-        "collection",
-        "source_span",
-        "string_scanner",
-        "typed_data"
-      ]
-    },
-    {
-      "name": "ffi",
-      "version": "2.1.4",
-      "dependencies": []
-    },
-    {
-      "name": "plugin_platform_interface",
-      "version": "2.1.8",
-      "dependencies": [
-        "meta"
-      ]
-    },
-    {
-      "name": "platform",
-      "version": "3.1.6",
-      "dependencies": []
-    },
-    {
-      "name": "xdg_directories",
-      "version": "1.1.0",
-      "dependencies": [
-        "meta",
-        "path"
       ]
     }
   ],

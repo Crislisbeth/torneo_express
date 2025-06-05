@@ -1,24 +1,27 @@
 import 'package:flutter/material.dart';
-
+import 'screens/home_screen.dart';
+import 'screens/create_tournament_screen.dart';
+import 'screens/tournament_list_screen.dart';
 
 void main() {
-  runApp(const MyApp());
+  runApp(TorneoExpressApp());
 }
 
-class MyApp extends StatelessWidget {
-  const MyApp({Key? key}) : super(key: key);
-
+class TorneoExpressApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Games Organizer',
+      title: 'Torneo Express',
       theme: ThemeData(
-        primarySwatch: Colors.blue,
+        primarySwatch: Colors.deepPurple,
         visualDensity: VisualDensity.adaptivePlatformDensity,
-        useMaterial3: true,
       ),
-      home: const LoginScreen(),
-      debugShowCheckedModeBanner: false,
+      initialRoute: HomeScreen.routeName,
+      routes: {
+        HomeScreen.routeName: (_) => HomeScreen(),
+        CreateTournamentScreen.routeName: (_) => CreateTournamentScreen(),
+        TournamentListScreen.routeName: (_) => TournamentListScreen(),
+      },
     );
   }
 }
