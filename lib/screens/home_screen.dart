@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'create_tournament_screen.dart';
 import 'tournament_list_screen.dart';
-
+// import 'package:firebase_auth/firebase_auth.dart';
 class HomeScreen extends StatelessWidget {
   static const routeName = '/';
 
@@ -38,7 +38,7 @@ class HomeScreen extends StatelessWidget {
                 },
               ),
             ],
-          ),
+          ), 
         ),
       ),
     );

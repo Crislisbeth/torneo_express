@@ -16,7 +16,7 @@ class Tournament {
   Map<String, dynamic> toJson() {
     return {
       'name': name,
-      'date': date.toIso8601String().split('T')[0], // Formato yyyy-MM-dd
+      'date': date.toIso8601String().split('T')[0], 
     };
   }
 }

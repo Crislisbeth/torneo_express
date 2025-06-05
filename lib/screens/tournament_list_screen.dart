@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import '../models/tournament.dart';
 import '../services/api_service.dart';
 import 'package:intl/intl.dart';
-
+// ignore_for_file: prefer_const_constructors
 class TournamentListScreen extends StatefulWidget {
   static const routeName = '/list';
 
