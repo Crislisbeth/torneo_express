@@ -1,0 +1,55 @@
+name: games_organizer
+description: "Aplicación para organizar juegos y resultados"
+
+# Esta línea evita que el paquete se publique accidentalmente en pub.dev.
+# Elimínala si deseas publicar tu paquete en pub.dev.
+publish_to: 'none'
+
+# La siguiente línea define la versión de la app.
+# El formato es: major.minor.patch+build
+# En Android, build-name es usado como versionName y build-number como versionCode.
+# En iOS, build-name es CFBundleShortVersionString y build-number es CFBundleVersion.
+# En Windows, build-name es usado como versión del producto y build-number como sufijo de compilación.
+version: 1.0.0+1
+
+# Definimos el entorno de SDK requerido para este proyecto.
+environment:
+  sdk: '>=3.2.0 <4.0.0'
+
+# Dependencias necesarias para que funcione la aplicación.
+# Puedes actualizar estas versiones manualmente o con `flutter pub upgrade --major-versions`.
+dependencies:
+  flutter:
+    sdk: flutter
+
+  # Iconos estilo iOS
+  cupertino_icons: ^1.0.8
+
+  # Fuentes de Google para estilos tipográficos personalizados
+  google_fonts: ^6.1.0
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+
+  # Conjunto de reglas para buenas prácticas de desarrollo en Flutter
+  flutter_lints: ^5.0.0
+
+# Sección específica para paquetes Flutter
+flutter:
+
+  # Esta línea asegura que los íconos de Material se incluyan en tu aplicación.
+  uses-material-design: true
+
+  # Para agregar imágenes o recursos personalizados, descomenta y edita esta sección:
+  # assets:
+  #   - images/
+  #   - icons/
+
+  # Puedes agregar fuentes personalizadas así:
+  # fonts:
+  #   - family: NombreDeFuente
+  #     fonts:
+  #       - asset: fonts/Nombre-Regular.ttf
+  #       - asset: fonts/Nombre-Bold.ttf
+  #         weight: 700
