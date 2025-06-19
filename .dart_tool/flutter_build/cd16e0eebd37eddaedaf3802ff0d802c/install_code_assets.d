@@ -1,0 +1,1 @@
+ C:\\Users\\Usuario\\Documents\\UIDE\\QUINTO\ CICLO\\PROGRAMACION\ MOVIL\\PROYECTO\\torneo_express\\.dart_tool\\flutter_build\\cd16e0eebd37eddaedaf3802ff0d802c\\native_assets.json: 
