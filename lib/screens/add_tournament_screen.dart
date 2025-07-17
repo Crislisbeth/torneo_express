@@ -18,30 +18,45 @@ class _AddTournamentScreenState extends State<AddTournamentScreen> {
     return Scaffold(
       appBar: AppBar(title: const Text("Nuevo Torneo")),
       body: Padding(
-        padding: const EdgeInsets.all(16.0),
+        padding: const EdgeInsets.all(20.0),
         child: Form(
           key: _formKey,
           child: Column(
+            crossAxisAlignment: CrossAxisAlignment.stretch,
             children: [
               TextFormField(
-                decoration: const InputDecoration(labelText: "Nombre del Torneo"),
+                decoration: InputDecoration(
+                  labelText: "Nombre del Torneo",
+                  prefixIcon: const Icon(Icons.edit),
+                  border: OutlineInputBorder(),
+                ),
                 validator: (value) {
                   if (value == null || value.isEmpty) return "Ingresa el nombre";
                   return null;
                 },
                 onSaved: (value) => _name = value!,
               ),
+              const SizedBox(height: 16),
               TextFormField(
-                decoration: const InputDecoration(labelText: "Juego"),
+                decoration: InputDecoration(
+                  labelText: "Juego",
+                  prefixIcon: const Icon(Icons.sports_esports),
+                  border: OutlineInputBorder(),
+                ),
                 validator: (value) {
                   if (value == null || value.isEmpty) return "Ingresa el juego";
                   return null;
                 },
                 onSaved: (value) => _game = value!,
               ),
+              const SizedBox(height: 16),
               TextFormField(
                 keyboardType: TextInputType.number,
-                decoration: const InputDecoration(labelText: "Número de Equipos"),
+                decoration: InputDecoration(
+                  labelText: "Número de Equipos",
+                  prefixIcon: const Icon(Icons.group),
+                  border: OutlineInputBorder(),
+                ),
                 validator: (value) {
                   if (value == null || value.isEmpty) return "Ingresa cantidad";
                   if (int.tryParse(value) == null) return "Número inválido";
@@ -49,7 +64,7 @@ class _AddTournamentScreenState extends State<AddTournamentScreen> {
                 },
                 onSaved: (value) => _teams = int.parse(value!),
               ),
-              const SizedBox(height: 20),
+              const SizedBox(height: 30),
               ElevatedButton.icon(
                 onPressed: () {
                   if (_formKey.currentState!.validate()) {

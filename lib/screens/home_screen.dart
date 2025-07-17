@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:torneo_express/screens/tournaments_screen.dart';
 import 'package:torneo_express/screens/add_tournament_screen.dart';
+import 'package:torneo_express/widgets/app_drawer.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({Key? key}) : super(key: key);
@@ -34,6 +35,7 @@ class _HomeScreenState extends State<HomeScreen> {
           BottomNavigationBarItem(icon: Icon(Icons.add), label: 'Agregar'),
         ],
       ),
+      drawer: const AppDrawer(), // Menú lateral
     );
   }
 }
