@@ -1,19 +1,20 @@
 import 'package:flutter/material.dart';
 import 'screens/home_screen.dart';
-import 'routes/app_routes.dart';
 
-void main() => runApp(const MyApp());
+void main() {
+  runApp(const TorneoExpressApp());
+}
 
-class MyApp extends StatelessWidget {
-  const MyApp({Key? key}) : super(key: key);
+class TorneoExpressApp extends StatelessWidget {
+  const TorneoExpressApp({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Torneo Express',
       theme: ThemeData(primarySwatch: Colors.blue),
-      initialRoute: AppRoutes.home,
-      onGenerateRoute: AppRoutes.generateRoute,
+      home: const HomeScreen(),
+      debugShowCheckedModeBanner: false,
     );
   }
 }

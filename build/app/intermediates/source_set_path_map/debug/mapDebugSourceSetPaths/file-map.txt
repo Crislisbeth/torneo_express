@@ -18,10 +18,10 @@ com.example.games_organizer.app-lifecycle-livedata-core-2.7.0-16 C:\Users\Usuari
 com.example.games_organizer.app-jetified-savedstate-1.2.1-17 C:\Users\Usuario\.gradle\caches\8.12\transforms\d9848b61b3701e09783de24c55215a44\transformed\jetified-savedstate-1.2.1\res
 com.example.games_organizer.app-lifecycle-livedata-2.7.0-18 C:\Users\Usuario\.gradle\caches\8.12\transforms\dc3ec8852201e1e753719b965a0982b9\transformed\lifecycle-livedata-2.7.0\res
 com.example.games_organizer.app-core-1.13.1-19 C:\Users\Usuario\.gradle\caches\8.12\transforms\f9e43caef8056ac2c6ab01d54f00ab83\transformed\core-1.13.1\res
-com.example.games_organizer.app-debug-20 C:\Users\Usuario\Documents\UIDE\QUINTO CICLO\PROGRAMACION MOVIL\PROYECTO\torneo_express\android\app\src\debug\res
-com.example.games_organizer.app-main-21 C:\Users\Usuario\Documents\UIDE\QUINTO CICLO\PROGRAMACION MOVIL\PROYECTO\torneo_express\android\app\src\main\res
-com.example.games_organizer.app-pngs-22 C:\Users\Usuario\Documents\UIDE\QUINTO CICLO\PROGRAMACION MOVIL\PROYECTO\torneo_express\build\app\generated\res\pngs\debug
-com.example.games_organizer.app-resValues-23 C:\Users\Usuario\Documents\UIDE\QUINTO CICLO\PROGRAMACION MOVIL\PROYECTO\torneo_express\build\app\generated\res\resValues\debug
-com.example.games_organizer.app-packageDebugResources-24 C:\Users\Usuario\Documents\UIDE\QUINTO CICLO\PROGRAMACION MOVIL\PROYECTO\torneo_express\build\app\intermediates\incremental\debug\packageDebugResources\merged.dir
-com.example.games_organizer.app-packageDebugResources-25 C:\Users\Usuario\Documents\UIDE\QUINTO CICLO\PROGRAMACION MOVIL\PROYECTO\torneo_express\build\app\intermediates\incremental\debug\packageDebugResources\stripped.dir
-com.example.games_organizer.app-debug-26 C:\Users\Usuario\Documents\UIDE\QUINTO CICLO\PROGRAMACION MOVIL\PROYECTO\torneo_express\build\app\intermediates\merged_res\debug\mergeDebugResources
+com.example.games_organizer.app-debug-20 C:\Users\Usuario\Documents\UIDE\QUINTO CICLO\PROGRAMACION MOVIL\torneo_express\android\app\src\debug\res
+com.example.games_organizer.app-main-21 C:\Users\Usuario\Documents\UIDE\QUINTO CICLO\PROGRAMACION MOVIL\torneo_express\android\app\src\main\res
+com.example.games_organizer.app-pngs-22 C:\Users\Usuario\Documents\UIDE\QUINTO CICLO\PROGRAMACION MOVIL\torneo_express\build\app\generated\res\pngs\debug
+com.example.games_organizer.app-resValues-23 C:\Users\Usuario\Documents\UIDE\QUINTO CICLO\PROGRAMACION MOVIL\torneo_express\build\app\generated\res\resValues\debug
+com.example.games_organizer.app-packageDebugResources-24 C:\Users\Usuario\Documents\UIDE\QUINTO CICLO\PROGRAMACION MOVIL\torneo_express\build\app\intermediates\incremental\debug\packageDebugResources\merged.dir
+com.example.games_organizer.app-packageDebugResources-25 C:\Users\Usuario\Documents\UIDE\QUINTO CICLO\PROGRAMACION MOVIL\torneo_express\build\app\intermediates\incremental\debug\packageDebugResources\stripped.dir
+com.example.games_organizer.app-debug-26 C:\Users\Usuario\Documents\UIDE\QUINTO CICLO\PROGRAMACION MOVIL\torneo_express\build\app\intermediates\merged_res\debug\mergeDebugResources
