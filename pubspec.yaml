@@ -1,0 +1,23 @@
+name: torneo_express
+description: Torneo Express - organización de juegos y resultados
+
+publish_to: "none"
+
+environment:
+  sdk: ">=2.19.0 <3.0.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+  intl: ^0.18.0
+  http: ^0.13.6
+
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+
+flutter:
+  uses-material-design: true
+  assets:
+    - assets/images/
